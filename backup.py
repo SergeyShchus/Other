@@ -15,6 +15,13 @@ target_dir = 'output_folder'
 today = target_dir + os.sep + time.strftime('%Y%m%d')
 now = time.strftime('%H%M%S')
 
+comment = input('Введите комментарий --> ')
+if len(comment) == 0:
+    target = today + os.sep + now + '.zip'
+else:
+    target = today + os.sep + now + '_' + \
+        comment.replace(' ', '_')fgh + '.zip'
+
 if not os.path.exists(today):
     os.mkdir(today) 
 print('Каталог успешно создан', today)
